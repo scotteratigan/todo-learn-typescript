@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { PrimaryButton } from './Buttons'
 
 type Props = {
-  addTodoFn(todoText: string): void
+  addTodoFn: (todoText: string) => void
 }
 
 export default function AddTodo({ addTodoFn }: Props) {
