@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import AddTodo from './AddTodo'
 const defaultTodos = require('../defaultTodos.json')
 
-interface TodoItemProps {
-  readonly complete: boolean
+type TodoLiProps = {
+  complete: boolean
 }
 
 type TodoTypes = {
@@ -45,7 +45,7 @@ export default function List() {
   )
 }
 
-const TodoItem = styled.li<TodoItemProps>`
+const TodoItem = styled.li<TodoLiProps>`
   padding: 1rem;
   color: ${p => (p.complete ? 'grey' : 'black')};
   text-decoration: ${p => (p.complete ? 'line-through' : 'none')};
