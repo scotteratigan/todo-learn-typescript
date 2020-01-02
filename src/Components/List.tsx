@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import TodoContext from '../TodoContext'
 import styled from 'styled-components'
 import AddTodo from './AddTodo'
-const defaultTodos = require('../defaultTodos.json')
 
 type TodoLiProps = {
   complete: boolean
@@ -13,20 +13,21 @@ type TodoTypes = {
 }
 
 export default function List() {
-  const [todos, setTodos] = useState(defaultTodos)
+  const { todos } = useContext(TodoContext)
+  console.log('todos:', todos)
   const toggleTodoCompleted = (i: number) => {
-    const newTodos = [...todos]
-    newTodos[i].complete = !newTodos[i].complete
-    setTodos(newTodos)
+    // const newTodos = [...todos]
+    // newTodos[i].complete = !newTodos[i].complete
+    // setTodos(newTodos)
   }
   const addTodo = (name: string) => {
-    const newTodos = [...todos, { name, complete: false }]
-    setTodos(newTodos)
+    // const newTodos = [...todos, { name, complete: false }]
+    // setTodos(newTodos)
   }
   const removeTodo = (i: number) => {
-    const newTodos = [...todos]
-    newTodos.splice(i, 1)
-    setTodos(newTodos)
+    // const newTodos = [...todos]
+    // newTodos.splice(i, 1)
+    // setTodos(newTodos)
   }
 
   return (
