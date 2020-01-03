@@ -1,13 +1,11 @@
 import React from 'react'
 import { TodoProvider } from './TodoContext'
-import List from './Components/List.tsx'
+import List from './Components/List'
 
 function App() {
   return (
     <TodoProvider>
-      <div className="App">
-        <List />
-      </div>
+      <List />
     </TodoProvider>
   )
 }
