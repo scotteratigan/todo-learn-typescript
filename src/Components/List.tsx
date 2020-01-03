@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import TodoContext from '../TodoContext'
 import styled from 'styled-components'
-import AddTodo from './AddTodo'
 
 export default function List() {
   const { todos, toggleTodoCompleted, removeTodo } = useContext(TodoContext)
@@ -12,21 +11,14 @@ export default function List() {
   }
 
   return (
-    <>
-      <FlexCenterContainer>
-        <TodoList>
-          {todos.map((todo: TodoTypes, i: number) => (
-            <TodoItem key={todo.name + i} complete={todo.complete}>
-              <span onClick={() => toggleTodoCompleted(i)}>{todo.name}</span>
-              <button onClick={() => removeTodo(i)}>X</button>
-            </TodoItem>
-          ))}
-        </TodoList>
-      </FlexCenterContainer>
-      <FlexCenterContainer>
-        <AddTodo />
-      </FlexCenterContainer>
-    </>
+    <TodoList>
+      {todos.map((todo: TodoTypes, i: number) => (
+        <TodoItem key={todo.name + i} complete={todo.complete}>
+          <span onClick={() => toggleTodoCompleted(i)}>{todo.name}</span>
+          <button onClick={() => removeTodo(i)}>X</button>
+        </TodoItem>
+      ))}
+    </TodoList>
   )
 }
 
@@ -41,9 +33,4 @@ const TodoItem = styled.li<{ complete: boolean }>`
   span {
     margin: 0 1rem;
   }
-`
-
-const FlexCenterContainer = styled.div`
-  display: flex;
-  justify-content: center;
 `
