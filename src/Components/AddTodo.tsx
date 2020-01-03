@@ -1,15 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import TodoContext from '../TodoContext'
 import { PrimaryButton } from './Buttons'
 
-type Props = {
-  addTodoFn: (todoText: string) => void
-}
-
-export default function AddTodo({ addTodoFn }: Props) {
+export default function AddTodo() {
   const [todoText, setTodoText] = useState('')
+  const { addTodo } = useContext(TodoContext)
   const addTodoToList = () => {
     if (todoText.trim().length < 1) return
-    addTodoFn(todoText)
+    addTodo(todoText)
     setTodoText('')
   }
   return (
