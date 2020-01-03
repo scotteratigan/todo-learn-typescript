@@ -14,5 +14,9 @@
   {
     "name": "Workout",
     "complete": false
+  },
+  {
+    "name": "Learn Typescript Basics",
+    "complete": true
   }
 ]

@@ -24,7 +24,6 @@ export default function List() {
         </TodoList>
       </FlexCenterContainer>
       <FlexCenterContainer>
-        {/* <AddTodo addTodoFn={addTodo} /> */}
         <AddTodo />
       </FlexCenterContainer>
     </>
